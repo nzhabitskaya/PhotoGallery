@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Photo Poses</string>
+
+    <!-- Add image dialog -->
+    <string name="title">Title</string>
+    <string name="create_category">ADD IMAGE</string>
+
+    <string name="delete">delete</string>
+</resources>
