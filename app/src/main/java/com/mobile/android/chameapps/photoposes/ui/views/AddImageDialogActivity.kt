@@ -37,7 +37,7 @@ abstract class AddImageDialogActivity : AppCompatActivity(), AddImageDialogContr
         ImagePicker.with(this)
             .crop()
             .galleryOnly()
-            .maxResultSize(1080, 1920)
+            .maxResultSize(1080, 2220)
             .start(GALLERY_IMAGE_REQ_CODE)
     }
 
