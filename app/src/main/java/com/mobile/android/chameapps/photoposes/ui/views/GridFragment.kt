@@ -48,7 +48,7 @@ abstract class GridFragment : Fragment(), GestureCallback, GridContract.View {
         activity?.overridePendingTransition(R.anim.right_slide_in, R.anim.right_slide_out)
     }
 
-    private fun initRecyclerView(view: View) {
+    open fun initRecyclerView(view: View) {
         adapter = GridAdapter(context!!)
         view.recycler_view.adapter = adapter
 

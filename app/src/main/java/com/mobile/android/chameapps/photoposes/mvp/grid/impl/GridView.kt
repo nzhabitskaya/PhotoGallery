@@ -1,9 +1,14 @@
 package com.mobile.android.chameapps.photoposes.mvp.grid.impl
 
 import android.os.Bundle
+import android.view.View
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.mobile.android.chameapps.photoposes.app.MyApplication
 import com.mobile.android.chameapps.photoposes.mvp.grid.GridContract
+import com.mobile.android.chameapps.photoposes.ui.adapter.GridAdapter
 import com.mobile.android.chameapps.photoposes.ui.views.GridFragment
+import kotlinx.android.synthetic.main.fragment_grid.view.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -20,11 +25,11 @@ class GridView : GridFragment(), GridContract.View {
         super.onCreate(savedInstanceState)
         injectDependency()
         presenter.onAttachView(this)
+        presenter.loadItems()
     }
 
-    override fun onResume() {
-        super.onResume()
-        presenter.loadItems()
+    override fun initRecyclerView(view: View) {
+        super.initRecyclerView(view)
         adapter.setPresenter(presenter)
     }
 
