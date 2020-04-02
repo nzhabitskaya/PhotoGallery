@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.mobile.android.chameapps.photoposes.R
 import com.mobile.android.chameapps.photoposes.entities.Item
+
 
 /**
  * Created by n.zhabitskaya on 2019-07-09.
@@ -34,6 +36,8 @@ class ViewPagerAdapter(private val context: Context) : PagerAdapter() {
         val imageByteArray = items.get((position + currentPosition) % items.size).byteArray
         Glide.with(context)
             .load(imageByteArray)
+            .dontAnimate()
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
             .placeholder(R.drawable.circle_shape_white)
             .into(imageView)
 
@@ -42,6 +46,8 @@ class ViewPagerAdapter(private val context: Context) : PagerAdapter() {
     }
 
     override fun destroyItem(parent: ViewGroup, position: Int, view: Any) {
+        val imageView: ImageView = (view as View).findViewById(R.id.image_view)
+        Glide.with(context).clear(imageView)
         parent.removeView(view as View?)
     }
 

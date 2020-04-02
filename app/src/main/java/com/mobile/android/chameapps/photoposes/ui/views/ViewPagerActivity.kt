@@ -20,6 +20,8 @@ abstract class ViewPagerActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition  (R.anim.right_slide_in, R.anim.right_slide_out)
+        mAdapter?.setItems(ArrayList())
+        mAdapter?.notifyDataSetChanged()
+        overridePendingTransition(R.anim.right_slide_in, R.anim.right_slide_out)
     }
 }
