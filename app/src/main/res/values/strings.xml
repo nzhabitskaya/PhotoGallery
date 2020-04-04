@@ -6,4 +6,5 @@
     <string name="create_category">ADD IMAGE</string>
 
     <string name="delete">delete</string>
+    <string name="camera_image">camera_image</string>
 </resources>
