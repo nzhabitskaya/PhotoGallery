@@ -50,7 +50,7 @@
                 style="@style/RippleStyleWhite"
                 android:layout_width="200dp"
                 android:layout_height="@dimen/spacing_xxlarge"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="35dp"
                 android:background="@color/grey_20">
 
                 <TextView
