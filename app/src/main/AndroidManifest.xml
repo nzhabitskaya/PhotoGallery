@@ -25,7 +25,13 @@
         <activity
             android:name=".mvp.adddialog.impl.AddImageDialogView"
             android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleTop"/>
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".mvp.viewpager.impl.ViewPagerView"
             android:theme="@style/AppTheme.NoActionBar"
